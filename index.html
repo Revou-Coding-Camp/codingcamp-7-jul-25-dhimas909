@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aplikasi To-Do List</title>
+  
+  <!-- Menghubungkan css tailwinds -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-cover bg-center bg-no-repeat text-white min-h-screen flex flex-col" style="background-image: url('asset/bg.jpg');">
+
+  <!-- Bagian Header -->
+  <header class="bg-gray-700 text-white text-center py-4 shadow">
+    <h1 class="text-2xl font-bold">To-Do List App</h1>
+  </header>
+
+  <!-- Bagian Main -->
+  <main class="flex-1 p-4 max-w-xl mx-auto bg-gray-800 mt-6 rounded shadow-md w-full">
+    
+    <!-- Form untuk menambah tugas -->
+    <form id="todo-form" class="flex gap-2 mb-4 flex-wrap">
+      <!-- Input Kegiatan -->
+      <input type="text" id="task-input" placeholder="Masukkan kegiatan..." required
+        class="flex-1 border border-gray-600 p-2 rounded bg-gray-700 text-white w-full sm:w-auto" />
+      
+      <!-- Input tanggal -->
+      <input type="date" id="due-date-input" required
+        class="border border-gray-600 p-2 rounded bg-gray-700 text-white w-full sm:w-auto" />
+      
+      <!-- Tombol tambah tugas -->
+      <button type="submit"
+        class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">
+        Tambah
+      </button>
+    </form>
+
+    <!-- Tombol filter dan hapus semua -->
+    <div class="flex justify-between items-center mb-4 flex-wrap gap-2">
+      
+      <!-- Tombol menampilkan semua tugas & hanya tugas yang selesai -->
+      <div class="flex gap-2 flex-wrap">
+        <button id="show-all-btn"
+          class="bg-gray-600 hover:bg-gray-700 px-3 py-2 rounded text-white">
+          Lihat Semua Tugas
+        </button>
+        <button id="show-completed-btn"
+          class="bg-green-600 hover:bg-green-700 px-3 py-2 rounded text-white">
+          Lihat Tugas Selesai
+        </button>
+      </div>
+      
+      <!-- Tombol menghapus semua tugas -->
+      <button id="delete-all-btn"
+        class="bg-red-600 hover:bg-red-700 px-3 py-2 rounded text-white">
+        Hapus Semua
+      </button>
+    </div>
+
+    <!-- Tabel daftar tugas -->
+    <div class="overflow-x-auto">
+      <table class="w-full text-left table-auto text-sm">
+        
+        <!-- Header tabel -->
+        <thead class="bg-gray-700">
+          <tr>
+            <th class="px-4 py-2">Tugas</th>
+            <th class="px-4 py-2">Batas Waktu</th>
+            <th class="px-4 py-2">Status</th>
+            <th class="px-4 py-2">Aksi</th>
+          </tr>
+        </thead>
+        
+        <!-- Isi tabel akan diisi oleh js -->
+        <tbody id="todo-list" class="bg-gray-800 divide-y divide-gray-700">
+          <!-- Daftar tugas dirender js di sini -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <!-- Bagian Footer -->
+  <footer class="bg-gray-700 text-white text-center py-3 mt-6">
+    <p>© 2025 To-Do App by Dhimas Satrio Panulad</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
