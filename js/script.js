@@ -118,7 +118,7 @@ function toggleComplete(id) {
   renderTasks(); // Render ulang tampilan
 }
 
-// Fungsi untuk menghapus 1 tugas berdasarkan ID-nya
+// Fungsi untuk menghapus 1 tugas berdasarkan ID nya
 function deleteTask(id) {
   if (confirm("Yakin ingin menghapus tugas ini?")) {
     tasks = tasks.filter((task) => task.id !== id);
